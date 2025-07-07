@@ -44,26 +44,13 @@
     .controls button {
       padding: 10px 20px;
       font-size: 16px;
-      margin: 0 10px;
+      margin: 0 5px;
       cursor: pointer;
       border: none;
       border-radius: 5px;
       background: #00c3ff;
       color: #fff;
     }
-    .nav-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 36px;
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-    }
-    .nav-arrow.left { left: 10px; }
-    .nav-arrow.right { right: 10px; }
     @media (max-width: 768px) {
       .container { flex-direction: column; }
       .thumbnails { width: 100%; display: flex; overflow-x: auto; height: auto; }
@@ -80,12 +67,12 @@
 <img src="../img/3-bathroom/bathroom3.jpg" alt="bathroom3.jpg"/>
     </div>
     <div class="main">
-      <button class="nav-arrow left" onclick="prevImage()">←</button>
       <img id="mainImage" src="../img/3-bathroom/bathroom1.jpg" />
-      <button class="nav-arrow right" onclick="nextImage()">→</button>
     </div>
   </div>
   <div class="controls">
+    <button onclick="prevImage()">←</button>
+    <button onclick="nextImage()">→</button>
     <a href='../index.html'><button>🏠 Home</button></a>
   </div>
   <script>
@@ -120,7 +107,6 @@
       });
     });
 
-    // 초기 active 설정
     updateActive(0);
   </script>
 </body>
