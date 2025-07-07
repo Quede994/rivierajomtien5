@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>5 BALCONY VIEW</title>
+  <title>5 Balcony View</title>
   <style>
-    body { margin: 0; font-family: sans-serif; }
-    .container { display: flex; flex-direction: row; height: 100vh; }
+    body { margin: 0; font-family: sans-serif; background: #111; color: #fff; }
+    h2 { text-align: center; padding: 20px 0; font-size: 24px; }
+    .container { display: flex; flex-direction: row; height: 85vh; }
     .thumbnails {
       width: 20%;
       overflow-y: auto;
-      background: #f0f0f0;
+      background: #222;
       padding: 10px;
     }
     .thumbnails img {
@@ -21,7 +22,7 @@
       border: 2px solid transparent;
     }
     .thumbnails img.active {
-      border: 2px solid #007bff;
+      border: 2px solid #00c3ff;
     }
     .main {
       flex: 1;
@@ -35,6 +36,20 @@
       max-height: 100%;
       object-fit: contain;
     }
+    .controls {
+      text-align: center;
+      margin: 20px;
+    }
+    .controls button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #00c3ff;
+      color: #fff;
+    }
     @media (max-width: 768px) {
       .container { flex-direction: column; }
       .thumbnails { width: 100%; display: flex; overflow-x: auto; height: auto; }
@@ -43,6 +58,7 @@
   </style>
 </head>
 <body>
+  <h2>5 Balcony View</h2>
   <div class="container">
     <div class="thumbnails" id="thumbs">
       <img src="../img/5-balcony-view/balcony view1.JPG" alt="balcony view1.JPG"/>
@@ -52,6 +68,10 @@
     <div class="main">
       <img id="mainImage" src="../img/5-balcony-view/balcony view1.JPG" />
     </div>
+  </div>
+  <div class="controls">
+    <button onclick="history.back()">← Back</button>
+    <a href='../index.html'><button>🏠 Home</button></a>
   </div>
   <script>
     const thumbs = document.querySelectorAll('#thumbs img');
@@ -63,7 +83,6 @@
         img.classList.add('active');
       });
     });
-    // 첫 번째 이미지에 active 클래스 추가
     if (thumbs.length > 0) {
       thumbs[0].classList.add('active');
     }
