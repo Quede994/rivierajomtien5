@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riviera Jomtien Condo</title>
   <style>
     body {
@@ -12,7 +13,7 @@
       text-align: center;
       margin: 0;
       padding: 0 20px;
-      font-size: 18px;
+      font-size: 22px;
       line-height: 1.8;
     }
     h1, h2, h3 {
@@ -23,25 +24,39 @@
       margin-bottom: 30px;
     }
     .button-row {
-      margin-top: 20px;
-      margin-bottom: 30px;
+      margin-top: 30px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .button-row button {
-      margin: 5px;
+      margin: 8px;
       background-color: deepskyblue;
+      color: #000;
       border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
+      padding: 14px 22px;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 18px;
+      font-weight: 800;
+      font-size: 22px;
+      transition: background-color 0.3s, color 0.3s;
     }
     .button-row button:hover {
-      background-color: #009acd;
+      background-color: #00bfff;
+      color: #000;
     }
-    hr {
-      border: 1px solid #444;
-      margin: 30px 0;
+    p {
+      margin: 10px 0;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 20px;
+      }
+      .button-row button {
+        width: 90%;
+        font-size: 20px;
+      }
     }
   </style>
 </head>
